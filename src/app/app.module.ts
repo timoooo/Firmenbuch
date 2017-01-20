@@ -4,17 +4,30 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {CompanySearchModule} from "./company-search/company-search.module";
+import {HomeComponent} from "./home/home.component";
+import {AppRouterModule} from "./app.routes";
+import {LocationSearchModule} from "./location-search/location-search.module";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    CompanySearchModule,
+    LocationSearchModule,
+    AppRouterModule
   ],
-  providers: [],
+
+  declarations: [
+    AppComponent,
+    HomeComponent
+  ],
+
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
