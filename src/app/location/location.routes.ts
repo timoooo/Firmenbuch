@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 
 
-import {LocationSearchComponent} from "../location-search/location-search.component";
+import {LocationSearchComponent} from "./location.component";
 
 const LOCATION_SEARCH_ROUTES: Routes = [
 
     {
-        path: 'location-search',
+        path: 'location',
         component: LocationSearchComponent
     },
 ];

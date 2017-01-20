@@ -1,23 +1,22 @@
-
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
-import {CompanySearchComponent} from "./company-search.component";
 import {NgModule} from "@angular/core";
-import {CompanySearchRouterModule} from "./company-search.routes";
+import {LocationSearchComponent} from "./location.component";
+import {LocationSearchRouterModule} from "./location.routes";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        CompanySearchRouterModule
+        LocationSearchRouterModule
     ],
     declarations: [
-        CompanySearchComponent
+        LocationSearchComponent
     ],
     providers: [
 
     ]
 })
-export class CompanySearchModule {
+export class LocationSearchModule {
 
 }

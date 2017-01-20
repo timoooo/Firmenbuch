@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {CompanySearchModule} from "./company-search/company-search.module";
+import {CompanySearchModule} from "./company/company.module";
 import {HomeComponent} from "./home/home.component";
 import {AppRouterModule} from "./app.routes";
-import {LocationSearchModule} from "./location-search/location-search.module";
+import {LocationSearchModule} from "./location/location.module";
 
 @NgModule({
 
