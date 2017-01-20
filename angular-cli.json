@@ -3,6 +3,10 @@
     "version": "1.0.0-beta.26",
     "name": "firmenbuch"
   },
+  "styles": [
+    "styles.scss",
+    "../node_modules/todomvc-app-css/index.css"
+  ],
   "apps": [
     {
       "root": "src",
