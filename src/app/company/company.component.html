@@ -1,6 +1,26 @@
-<body bgcolor="#375a7f">
-<h1>Company</h1>
 
+<h1>Companies</h1>
+
+
+
+<company>
+  <table class="table table-striped table-hover ">
+    <thead>
+    <tr class="info">
+      <th>Name</th>
+      <th>Locations</th>
+      <th>Branche</th>
+      <th>Gründungsdatum</th>
+    </tr>
+    <tr *ngFor="let company of companies">
+      <td>{{company.name}}company.name</td>
+      <td *ngFor="let location of company.strings">{{location}}, </td>
+      <td>{{company.branch}}</td>
+      <td>{{company.date}}</td>
+    </tr>
+    </tbody>
+  </table>
+</company>
 <form #f="ngForm" novalidate>
 <div class="form-group">
 <nav class="navbar navbar-default">
@@ -27,7 +47,7 @@
   </tr>
   <tr *ngFor="let company of companies">
     <td>{{company.name}}company.name</td>
-    <td *ngFor="let location of company.locations">{{location}}, </td>
+    <td *ngFor="let location of company.strings">{{location}}, </td>
     <td>{{company.branch}}</td>
     <td>{{company.date}}</td>
   </tr>

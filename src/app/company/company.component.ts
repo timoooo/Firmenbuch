@@ -1,10 +1,11 @@
 
 
-import {Component} from "@angular/core";
+import {Component, Input, Injectable} from "@angular/core";
+import {Http, Response, URLSearchParams} from "@angular/http";
 
 
 @Component({
-    selector: 'company-search', // <flight-search></...>
+    selector: 'company', // <flight-search></...>
     templateUrl: 'company.component.html',
     styleUrls: [
       'company.component.css'
@@ -12,4 +13,17 @@ import {Component} from "@angular/core";
     providers:[  ]
 })
 
-export class CompanySearchComponent {}
+@Injectable()
+export class CompanyComponent {
+  http: Http;
+  constructor(http: Http) {
+    console.log('Creating DataService');
+    this.http = http;
+  }
+
+getAll(){
+
+}
+
+
+}

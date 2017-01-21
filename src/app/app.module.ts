@@ -4,10 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {CompanySearchModule} from "./company/company.module";
+import {CompanyModule} from "./company/company.module";
 import {HomeComponent} from "./home/home.component";
 import {AppRouterModule} from "./app.routes";
-import {LocationSearchModule} from "./location/location.module";
+import {LocationModule} from "./location/location.module";
+import {BASE_URL_COMPANIES, BASE_URL_LOCATIONS} from './app.tokens';
+
+
+const BASE_URL_COMPANIES_PRODUCTION = "localhost:8080/companies"
+const BASE_URL_LOCATIONS_PRODUCTION = "localhost:8080/locations"
 
 @NgModule({
 
@@ -15,18 +20,19 @@ import {LocationSearchModule} from "./location/location.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    CompanySearchModule,
-    LocationSearchModule,
+    CompanyModule,
+    LocationModule,
     AppRouterModule
   ],
 
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
 
   providers: [
-
+    { provide: BASE_URL_COMPANIES, useValue: BASE_URL_COMPANIES_PRODUCTION},
+    { provide: BASE_URL_LOCATIONS, useValue: BASE_URL_LOCATIONS_PRODUCTION}
   ],
   bootstrap: [AppComponent]
 })

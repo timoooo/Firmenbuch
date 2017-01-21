@@ -17,6 +17,6 @@ import {LocationSearchRouterModule} from "./location.routes";
 
     ]
 })
-export class LocationSearchModule {
+export class LocationModule{
 
 }
