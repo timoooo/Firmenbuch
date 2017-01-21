@@ -44,10 +44,16 @@ public class Company {
   private long version;
 
 
-  public Company() {
-    //initData();
-  }
+  @Transient
+  private int firstRun = 0;
 
+  public Company() {
+    if (firstRun == 0) {
+      initData();
+      firstRun = 1;
+      System.out.print("IT WORKS LULU");
+    }
+  }
   public void addCompany(Company company) {
 
    // companyRepository.save(company);
