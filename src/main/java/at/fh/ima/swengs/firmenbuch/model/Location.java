@@ -3,21 +3,22 @@ package at.fh.ima.swengs.firmenbuch.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-
-public class String {
+/**
+ * Created by Hoxha on 21.01.2017.
+ */
+public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private java.lang.String name;
+    private String name;
 
-    private java.lang.String address;
+    private String address;
 
     private int employees;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "location")
     private List<Company> companies;
 
     @Version
@@ -39,11 +40,11 @@ public class String {
         this.companies = companies;
     }
 
-    public java.lang.String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(java.lang.String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -55,11 +56,11 @@ public class String {
         this.employees = employees;
     }
 
-    public java.lang.String getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(java.lang.String name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

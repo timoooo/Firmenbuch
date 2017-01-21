@@ -8,5 +8,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  */
 
 @RepositoryRestResource()
-public interface LocationRepository  extends PagingAndSortingRepository<String, Long> {
+public interface LocationRepository  extends PagingAndSortingRepository<Location, Long> {
 }

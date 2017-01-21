@@ -27,13 +27,18 @@ public class Company {
   @Temporal(TemporalType.DATE)
   protected Date foundationDate;
 
-  private java.lang.String name;
-  private java.lang.String branch;
+  private String name;
+
+  private String branch;
+
   private int employeeNumber;
   //Headquater Location
-  private java.lang.String hqlocation;
+  private String hqlocation;
 
   private Random randomGenerator;
+
+  @ManyToOne(targetEntity = Location.class)
+  private Location location;
 
   @Version
   private long version;
@@ -48,7 +53,7 @@ public class Company {
 
   }
 
-  public java.lang.String randHQLocation(){
+  public String randHQLocation(){
 
     ArrayList<java.lang.String> locations = new ArrayList<>();
     locations.add("Graz");
@@ -142,5 +147,13 @@ public class Company {
 
   public void setHqlocation(java.lang.String  hqlocation) {
     this.hqlocation = hqlocation;
+  }
+
+  public Location getLocation(){
+    return location;
+  }
+
+  public void setLocation(Location location){
+    this.location = location;
   }
 }
