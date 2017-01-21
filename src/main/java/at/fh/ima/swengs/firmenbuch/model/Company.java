@@ -38,6 +38,8 @@ public class Company {
   @Column
   String hqlocation;
 
+  @ManyToOne(targetEntity = Location.class)
+  private Location location;
 
   @Transient
   @Version
@@ -124,4 +126,13 @@ public class Company {
   public void setHqlocation(String hqlocation) {
     this.hqlocation = hqlocation;
   }
+
+  public Location getLocation() {
+    return location;
+  }
+
+  public void setLocation(Location location) {
+    this.location = location;
+  }
+
 }

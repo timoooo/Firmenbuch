@@ -17,8 +17,8 @@ public class Location {
 
     private int employees;
 
-    //@ManyToMany
-    //private List<Company> companies;
+    @OneToMany(mappedBy = "location")
+    private List<Company> companies;
 
     @Version
     private long version;
@@ -30,7 +30,7 @@ public class Location {
     public void setId(long id) {
         this.id = id;
     }
-/*
+
     public List<Company> getCompanies() {
         return companies;
     }
@@ -38,7 +38,7 @@ public class Location {
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
-    */
+
     public String getAddress() {
         return address;
     }
