@@ -5,113 +5,121 @@ import at.fh.ima.swengs.firmenbuch.util.JsonDateDeserializer;
 import at.fh.ima.swengs.firmenbuch.util.JsonDateSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.lang.*;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
-
 public class Company {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  @Autowired
+  CompanyRepository companyRepository;
 
-    @JsonDeserialize(using = JsonDateDeserializer.class)
-    @JsonSerialize(using = JsonDateSerializer.class)
-    @Temporal(TemporalType.DATE)
-    protected Date foundationDate;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    private java.lang.String name;
+  @JsonDeserialize(using = JsonDateDeserializer.class)
+  @JsonSerialize(using = JsonDateSerializer.class)
+  @Temporal(TemporalType.DATE)
+  protected Date foundationDate;
 
-    private java.lang.String branch;
+  private java.lang.String name;
+  private java.lang.String branch;
+  private int employeeNumber;
+  //Headquater Location
+  private java.lang.String hqlocation;
 
-    private int employeeNumber;
+  private Random randomGenerator;
 
-    @ManyToMany
-    private ArrayList<String> locations;
+  @Version
+  private long version;
 
-    @Version
-    private long version;
 
-    public Company() {
-      initData();
+  public Company() {
+    initData();
   }
 
-    public void addCompany(){
+  public void addCompany(Company company) {
+    companyRepository.save(company);
 
+  }
+
+  public java.lang.String randHQLocation(){
+
+    ArrayList<java.lang.String> locations = new ArrayList<>();
+    locations.add("Graz");
+    locations.add("Wien");
+    locations.add("Klagenfurt");
+    locations.add("Salzburg");
+     int index = randomGenerator.nextInt(locations.size());
+    return locations.get(index);
+  }
+
+  public void initData() {
+    //Generate 10 Companies
+
+
+    for (int i = 1; i < 11; i++) {
+      Company company = new Company();
+      company.setName("Firma " + i);
+      company.setBranch("IT:" + i);
+      company.setEmployeeNumber(i * 10);
+      company.setHqlocation(randHQLocation());
+      company.setVersion(0 + i);
+      Date today = new Date();
+      company.setFoundationDate(today);
+
+      companyRepository.save(company);
     }
 
-    public void initData(){
-      //Generate 10 Companies
 
-      ArrayList<java.lang.String> locations = new ArrayList<>();
-      locations.add("Graz");
-      locations.add("Wien");
-      locations.add("Klagenfurt");
-      locations.add("Salzburg");
-      for(int i=1;i<11;i++){
-        Company company = new Company();
-        company.setName("Firma "+i);
-        company.setBranch("IT:"+i);
-        company.setEmployeeNumber(i*10);
-        company.setLocations(locations);
-        company.setVersion(0+i);
-        Date today = new Date();
-        company.setFoundationDate(today);
-        
-      }
-
-
-
-
-    }
+  }
 
 
 
 
   public long getId() {
-        return id;
-    }
+    return id;
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public ArrayList<String> getLocations() {
+   /* public ArrayList<String> getLocations() {
         return locations;
     }
 
   private void setLocations(ArrayList<java.lang.String> locations) {
+  }*/
+
+  public java.lang.String getName() {
+    return name;
   }
 
-    public java.lang.String getName() {
-        return name;
-    }
+  public void setName(java.lang.String name) {
+    this.name = name;
+  }
 
-    public void setName(java.lang.String name) {
-        this.name = name;
-    }
+  public java.lang.String getBranch() {
+    return branch;
+  }
 
-    public java.lang.String getBranch() {
-        return branch;
-    }
+  public void setBranch(java.lang.String branch) {
+    this.branch = branch;
+  }
 
-    public void setBranch(java.lang.String branch) {
-        this.branch = branch;
-    }
+  public int getEmployeeNumber() {
+    return employeeNumber;
+  }
 
-    public int getEmployeeNumber() {
-        return employeeNumber;
-    }
-
-    public void setEmployeeNumber(int employeeNumber) {
-        this.employeeNumber = employeeNumber;
-    }
+  public void setEmployeeNumber(int employeeNumber) {
+    this.employeeNumber = employeeNumber;
+  }
 
   public Date getFoundationDate() {
     return foundationDate;
@@ -127,5 +135,12 @@ public class Company {
 
   public void setVersion(long version) {
     this.version = version;
+  }
+  public java.lang.String  getHqlocation() {
+    return hqlocation;
+  }
+
+  public void setHqlocation(java.lang.String  hqlocation) {
+    this.hqlocation = hqlocation;
   }
 }

@@ -3,6 +3,7 @@ package at.fh.ima.swengs.firmenbuch.model;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,6 +13,6 @@ import java.util.List;
 @RepositoryRestResource()
 public interface CompanyRepository  extends PagingAndSortingRepository<Company, Long> {
 
-  public List<Company> findAll();
+  public ArrayList<Company> findAll();
 
 }
