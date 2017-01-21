@@ -17,9 +17,19 @@ public class FirmenbuchApplication {
     SpringApplication.run(FirmenbuchApplication.class, args);
   }
 
+
+
+  @Bean
+  public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurerAdapter() {
+      @Override
+      public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/").allowedOrigins("http://localhost:8080");
+      }
+    };
+  }
+
 }
-
-
 
 	/*
       http://docs.spring.io/spring/docs/current/spring-framework-reference/html/cors.html

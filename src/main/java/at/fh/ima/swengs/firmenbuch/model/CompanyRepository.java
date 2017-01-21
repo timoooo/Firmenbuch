@@ -13,6 +13,6 @@ import java.util.List;
 @RepositoryRestResource()
 public interface CompanyRepository  extends PagingAndSortingRepository<Company, Long> {
 
-  public ArrayList<Company> findAll();
+  ArrayList<Company> findAll();
 
 }

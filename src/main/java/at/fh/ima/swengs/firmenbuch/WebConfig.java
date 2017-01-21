@@ -4,7 +4,7 @@ package at.fh.ima.swengs.firmenbuch;
  * Created by Timo on 21.01.2017.
  */
 
-
+/*
   import org.springframework.context.annotation.Bean;
   import org.springframework.context.annotation.Configuration;
   import org.springframework.web.cors.CorsConfiguration;
@@ -13,6 +13,8 @@ package at.fh.ima.swengs.firmenbuch;
 
 @Configuration
 public class WebConfig {
+
+
   @Bean
   public CorsFilter corsFilter() {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
@@ -28,3 +30,5 @@ public class WebConfig {
     return new CorsFilter(source);
   }
 }
+
+*/

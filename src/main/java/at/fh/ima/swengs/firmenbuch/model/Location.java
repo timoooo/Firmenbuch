@@ -5,20 +5,20 @@ import java.util.List;
 
 @Entity
 
-public class String {
+public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private java.lang.String name;
+    private String name;
 
-    private java.lang.String address;
+    private String address;
 
     private int employees;
 
-    @ManyToMany
-    private List<Company> companies;
+    //@ManyToMany
+    //private List<Company> companies;
 
     @Version
     private long version;
@@ -30,7 +30,7 @@ public class String {
     public void setId(long id) {
         this.id = id;
     }
-
+/*
     public List<Company> getCompanies() {
         return companies;
     }
@@ -38,12 +38,12 @@ public class String {
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
-
-    public java.lang.String getAddress() {
+    */
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(java.lang.String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -55,11 +55,11 @@ public class String {
         this.employees = employees;
     }
 
-    public java.lang.String getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(java.lang.String name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

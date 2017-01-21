@@ -5,6 +5,7 @@ import at.fh.ima.swengs.firmenbuch.model.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * Created by Timo on 21.01.2017.
  */
 
-@CrossOrigin(origins = "http://firmenbuch.at", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/companies")
 public class CompanyController {
@@ -27,7 +28,7 @@ public class CompanyController {
 
 
 
-  @RequestMapping("/read")
+  @GetMapping("/list")
   public ArrayList<Company> getAllCompanies() {
     ArrayList<Company> companies = companyRepository.findAll();
     return companies;
