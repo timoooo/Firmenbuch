@@ -51,7 +51,7 @@ public class Company {
 
   public Company() {
     if (firstRun == 0) {
-      initData();
+      //initData();
       firstRun = 1;
       System.out.print("IT WORKS LULU");
     }

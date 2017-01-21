@@ -2,6 +2,8 @@
 
 import {Component, Input, Injectable} from "@angular/core";
 import {Http, Response, URLSearchParams} from "@angular/http";
+import {CompanyService} from "../services/company.service";
+import {Company} from "../entities/company";
 
 
 @Component({
@@ -15,11 +17,16 @@ import {Http, Response, URLSearchParams} from "@angular/http";
 
 @Injectable()
 export class CompanyComponent {
-  http: Http;
-  constructor(http: Http) {
-    console.log('Creating DataService');
-    this.http = http;
-  }
+
+    public searchCompany: string;
+
+    constructor(private companyService: CompanyService){
+
+    }
+
+    public get companies(): Array<Company>{
+        return this.companyService.companies;
+    }
 
 getAll(){
 

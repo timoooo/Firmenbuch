@@ -26,7 +26,6 @@ export class CompanyService {
       .http
       .get(companies+"/list")
       .map(resp => resp.json());
-
   }
 
 }
