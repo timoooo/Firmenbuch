@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class CompanyService {
 
-  companies: Array<Company> = [];
+
 
   constructor(
     @Inject(BASE_URL_COMPANIES) private baseUrl: string,
@@ -24,7 +24,7 @@ export class CompanyService {
 
     return this
       .http
-      .get(companies+"/list")
+      .get(this.baseUrl+"/list")
       .map(resp => resp.json());
 
   }
