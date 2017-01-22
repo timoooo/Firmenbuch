@@ -5,11 +5,10 @@ import at.fh.ima.swengs.firmenbuch.util.JsonDateDeserializer;
 import at.fh.ima.swengs.firmenbuch.util.JsonDateSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
+import java.util.Date;
 
-import java.util.*;
 
 @Entity
 public class Company {

@@ -50,19 +50,15 @@ public class CompanyController {
   }
    private int firstRun = 0;
 
+  @GetMapping("/fill")
+  public void fillDB() {
+    initData();
+
+  }
+
   @GetMapping("/list")
   public ArrayList<Company> getAllCompanies() {
-    firstRun = 1;
-
-    if(firstRun==0){
-      initData();
-      System.out.print("initiating db    creating Datasets");
-    }
-
-
-
     ArrayList<Company> companies = companyRepository.findAll();
-
     return companies;
   }
   //das selbe für CRUD Operationen
