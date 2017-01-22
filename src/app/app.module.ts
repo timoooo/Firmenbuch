@@ -22,18 +22,19 @@ const BASE_URL_LOCATIONS_PRODUCTION = "localhost:8080/locations"
     HttpModule,
     CompanyModule,
     LocationModule,
-    AppRouterModule
+    AppRouterModule,
   ],
 
   declarations: [
     AppComponent,
     HomeComponent,
+
   ],
 
   providers: [
     { provide: BASE_URL_COMPANIES, useValue: BASE_URL_COMPANIES_PRODUCTION},
     { provide: BASE_URL_LOCATIONS, useValue: BASE_URL_LOCATIONS_PRODUCTION}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent      ]
 })
 export class AppModule { }

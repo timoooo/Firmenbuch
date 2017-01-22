@@ -18,14 +18,34 @@ export class CompanyService {
 
   }
 
-  public findAll(): Observable<Company> {
+  public findAll():void {
+    console.log("FINDALL CALL  GOING TO URL: "+this.baseUrl+"/list");
+    let url = this.baseUrl;
 
-    let companies = this.baseUrl;
+    let headers = new Headers();
+    headers.set('Accept', 'application/json');
 
-    return this
+    this
       .http
-      .get(companies+"/list")
-      .map(resp => resp.json());
+      .get(url+"/list", headers)
+      .map(resp => resp.json())
+      .subscribe(
+        (companies) => {
+          this.companies = companies;
+        },
+        (err) => {
+          console.error('Fehler beim Laden', err);
+        });
   }
+
+
+
+
+
+
+
+
+
+
 
 }

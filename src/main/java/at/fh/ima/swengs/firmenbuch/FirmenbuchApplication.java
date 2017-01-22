@@ -1,6 +1,7 @@
 package at.fh.ima.swengs.firmenbuch;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 
 @SpringBootApplication
+@EnableAutoConfiguration
 public class FirmenbuchApplication {
 
   public static void main(String[] args) {

@@ -20,8 +20,7 @@ public class Company {
   Date foundationDate;
 
 
-  //@Autowired
-  //CompanyRepository companyRepository;
+
 
 
   @Id
@@ -44,54 +43,6 @@ public class Company {
   @Transient
   @Version
   private long version;
-
-
-  @Transient
-  private int firstRun = 0;
-
-  public Company() {
-    if (firstRun == 0) {
-      //initData();
-      firstRun = 1;
-      System.out.print("IT WORKS LULU");
-    }
-  }
-  public void addCompany(Company company) {
-
-   // companyRepository.save(company);
-
-  }
-  /*
-  private Random randomGenerator;
-  public String randHQLocation(){
-
-    ArrayList<String> locations = new ArrayList<>();
-    locations.add("Graz");
-    locations.add("Wien");
-    locations.add("Klagenfurt");
-    locations.add("Salzburg");
-     int index = randomGenerator.nextInt(locations.size());
-    return locations.get(index);
-  }
-  */
-  public void initData() {
-    //Generate 10 Companies
-
-
-    for (int i = 1; i < 11; i++) {
-      Company company = new Company();
-      company.setName("Firma " + i);
-      company.setBranch("IT:" + i);
-      company.setEmployeeNumber(i * 10);
-      company.setHqlocation("Graz");
-      Date today = new Date();
-      company.setFoundationDate(today);
-
-      //companyRepository.save(company);
-    }
-
-
-  }
 
   public Date getFoundationDate() {
     return foundationDate;

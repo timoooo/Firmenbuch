@@ -7,7 +7,7 @@ import {Company} from "../entities/company";
 
 
 @Component({
-    selector: 'company', // <flight-search></...>
+    selector: 'comp', // <flight-search></...>
     templateUrl: 'company.component.html',
     styleUrls: [
       'company.component.css'
