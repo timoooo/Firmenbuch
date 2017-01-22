@@ -1,17 +1,17 @@
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {NgModule} from "@angular/core";
-import {LocationSearchComponent} from "./location.component";
-import {LocationSearchRouterModule} from "./location.routes";
+import {LocationComponent} from "./location.component";
+import {LocationRouterModule} from "./location.routes";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        LocationSearchRouterModule
+        LocationRouterModule
     ],
     declarations: [
-        LocationSearchComponent
+        LocationComponent
     ],
     providers: [
 

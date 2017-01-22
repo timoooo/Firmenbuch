@@ -50,11 +50,6 @@ public class Company {
   private int firstRun = 0;
 
   public Company() {
-    if (firstRun == 0) {
-      //initData();
-      firstRun = 1;
-      System.out.print("IT WORKS LULU");
-    }
   }
   public void addCompany(Company company) {
 
