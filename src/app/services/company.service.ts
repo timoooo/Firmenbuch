@@ -41,6 +41,7 @@ export class CompanyService {
 
     let headers = new Headers();
     headers.set('Accept', 'application/json');
+    console.log("GETTING STUFF");
 
 
     this
@@ -55,6 +56,12 @@ export class CompanyService {
               console.error('Fehler beim Laden', err);
             }
         );
+
+    //hello
+
+
+
+  console.log(this.companies);
   }
 
   public find(searchCompany: string): void {

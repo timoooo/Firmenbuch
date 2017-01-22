@@ -7,59 +7,52 @@ import java.util.List;
 
 public class Location {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    private String name;
 
-    private String address;
+  @Column
+  private String name;
+  @Column
+  private String land = "Austria";
 
-    private int employees;
 
-    @OneToMany(mappedBy = "location")
-    private List<Company> companies;
+  @OneToMany(mappedBy = "location")
+  private List<Company> companies;
 
-    @Version
-    private long version;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public List<Company> getCompanies() {
-        return companies;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setCompanies(List<Company> companies) {
-        this.companies = companies;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+  public String getLand() {
+    return land;
+  }
 
-    public int getEmployees() {
-        return employees;
-    }
+  public void setLand(String land) {
+    this.land = land;
+  }
 
-    public void setEmployees(int employees) {
-        this.employees = employees;
-    }
+  public List<Company> getCompanies() {
+    return companies;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setCompanies(List<Company> companies) {
+    this.companies = companies;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
