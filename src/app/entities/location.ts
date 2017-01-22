@@ -4,7 +4,5 @@
 export interface Location {
   id: number
   name: string
-  address: string
-  employees:number
-  locations: any
+  land: string
 }

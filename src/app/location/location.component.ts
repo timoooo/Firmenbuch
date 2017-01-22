@@ -1,5 +1,8 @@
 import {Component} from "@angular/core";
 import {LocationService} from "../services/location.service"
+import {Location} from '../entities/location';
+import {Company} from "../entities/company";
+import {CompanyService} from "../services/company.service";
 
 @Component({
   selector: 'location', // <flight-search></...>
@@ -13,17 +16,22 @@ export class LocationComponent {
 
   public searchStringLocation: string;
   public selectedLocation: Location;
-  //public companies: Array<Company> = this.companies;
+  //public companiesArray: Array<Company> = this.companiesArray;
 
-  constructor(private locationService: LocationService){
+  constructor(private locationService: LocationService,
+              private companyService: CompanyService){
 
   }
 
-  public get locations(): Array<Location> {
-    return this.locationService.locations;
+  public get getLocationsArray(): Array<Location> {
+    return this.locationService.locationsArray;
   }
 
-  search(): void {
+  public get getCompaniesArray():Array<Company> {
+    return this.companyService.companies;
+  }
+
+  searchLocations(): void {
     this.locationService.findAll();
 
   }

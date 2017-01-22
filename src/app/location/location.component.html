@@ -1,1 +1,18 @@
 <h1>Location Search</h1>
+
+<div class="form-group">
+  <label>Company</label>
+  <input name="searchLocation" [(ngModel)]="searchStringLocation" class="form-control">
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" (click)="searchLocations()">Suchen</button>
+</div>
+
+
+
+  <div *ngFor="let l of getLocationsArray" class="col-xs-12 col-lg-3 col-md-4 col-sm-6 ">
+    <location-card
+      [itemLocation]="l"
+      [locationID]="" ]="getCompaniesArray">
+    </location-card>
+  </div>

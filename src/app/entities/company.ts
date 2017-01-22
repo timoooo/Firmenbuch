@@ -6,6 +6,6 @@ export interface Company {
   name: string
   branch: number
   employeeNumber:number
-  locations: any
+  location_id: number
   date: string
 }

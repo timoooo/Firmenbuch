@@ -20,7 +20,7 @@ export class CompanyComponent {
 
     public searchCompany: string;
     public selectedCompany: Company;
-    //public companies: Array<Company> = this.companies;
+    //public companiesArray: Array<Company> = this.companiesArray;
 
     constructor(private companyService: CompanyService){
 

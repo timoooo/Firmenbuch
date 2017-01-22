@@ -1,24 +1,30 @@
 /**
  * Created by Timo on 22.01.2017.
  */
-/**
- * Created by Timo on 21.01.2017.
- */
+
 import {Injectable, Inject} from "@angular/core";
 import {Http, URLSearchParams, Headers} from "@angular/http";
-import {BASE_URL_LOCATIONS} from "../app.tokens";
+import {BASE_URL_LOCATIONS,BASE_URL_COMPANIES} from "../app.tokens";
 import { Observable } from 'rxjs';
+import { Company } from '../entities/company';
+import {Location} from '../entities/location';
+import {CompanyService} from './company.service'
 import 'rxjs/Rx';
 
 @Injectable()
 export class LocationService {
 
-  locations: Array<Location> = [];
+  locationsArray: Array<Location> = [];
+  companiesArray: Array<Company> = [];
+
 
   constructor(
     @Inject(BASE_URL_LOCATIONS) private baseUrl: string,
-    private http: Http ) {
+    @Inject(BASE_URL_COMPANIES) private baseUrlCompanies: string,
+    private http: Http,
+    private companyService: CompanyService) {
 
+    this.companiesArray = this.companyService.companies;
   }
 
   public findById(id: string): Observable<Location> {
@@ -40,7 +46,7 @@ export class LocationService {
 
   public findAll():void {
     let url = this.baseUrl;
-
+    //let urlCompanies = this.baseUrlCompanies
     let headers = new Headers();
     headers.set('Accept', 'application/json');
     console.log("GETTING STUFF");
@@ -52,44 +58,17 @@ export class LocationService {
       .map(resp => resp.json())
       .subscribe(
         (locations) => {
-          this.locations = locations["_embedded"]["companies"];
+          this.locationsArray = locations["_embedded"]["locations"];
         },
         (err) => {
           console.error('Fehler beim Laden', err);
         }
       );
 
-    //hello
 
-
-
-    console.log(this.locations);
   }
 
-  public find(searchCompany: string): void {
 
-    let url = this.baseUrl;
-
-    /*let search = new URLSearchParams();
-     search.set('searchCompany', searchCompany);*/
-
-
-    let headers = new Headers();
-    headers.set('Accept', 'application/json');
-
-    this
-      .http
-      .get(url, { headers})
-      .map(resp => resp.json()["_embedded"]["companies"])
-      .subscribe(
-        (locations) => {
-          this.locations = locations;
-        },
-        (err) => {
-          console.error('Fehler beim Laden', err);
-        }
-      );
-  }
 
 
 }

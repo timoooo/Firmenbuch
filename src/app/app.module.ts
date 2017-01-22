@@ -11,7 +11,7 @@ import {LocationModule} from "./location/location.module";
 import {BASE_URL_COMPANIES, BASE_URL_LOCATIONS} from './app.tokens';
 
 
-const BASE_URL_COMPANIES_PRODUCTION = "http://localhost:8080/companies"
+const BASE_URL_COMPANIES_PRODUCTION = "http://localhost:8080/companiesArray"
 const BASE_URL_LOCATIONS_PRODUCTION = "http://localhost:8080/locations"
 
 @NgModule({
