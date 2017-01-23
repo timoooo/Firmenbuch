@@ -10,9 +10,9 @@
 
 
 
-  <div *ngFor="let l of getLocationsArray" class="col-xs-12 col-lg-3 col-md-4 col-sm-6 ">
+  <div *ngFor="let l of getLocationsArray" >
     <location-card
       [itemLocation]="l"
-      [locationID]="" ]="getCompaniesArray">
+      [locationID]=getCompaniesArray>
     </location-card>
   </div>

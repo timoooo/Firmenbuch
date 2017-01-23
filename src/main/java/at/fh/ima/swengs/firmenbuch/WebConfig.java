@@ -22,11 +22,11 @@ public class WebConfig {
     config.setAllowCredentials(true);
     config.addAllowedOrigin("*");
     config.addAllowedHeader("*");
-    config.addAllowedMethod("*");
-    //config.addAllowedMethod("GET");
-    //config.addAllowedMethod("POST");
-    //config.addAllowedMethod("PUT");
-    //config.addAllowedMethod("DELETE");
+    //config.addAllowedMethod("*");
+    config.addAllowedMethod("GET");
+    config.addAllowedMethod("POST");
+    config.addAllowedMethod("PUT");
+    config.addAllowedMethod("DELETE");
     source.registerCorsConfiguration("/**", config);
     return new CorsFilter(source);
   }

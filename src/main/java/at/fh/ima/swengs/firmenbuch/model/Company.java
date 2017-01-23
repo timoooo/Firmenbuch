@@ -24,15 +24,12 @@ public class Company {
   //Headquater Location
 
 
+
+
+
   @ManyToOne(targetEntity = Location.class)
-  private Location location;
-
-
-
-
-  public Company() {
-  }
-
+  @JoinColumn(name = "locationID")
+  private Location locationID;
 
   public String getFoundationDate() {
     return foundationDate;
@@ -66,12 +63,12 @@ public class Company {
     this.employeeNumber = employeeNumber;
   }
 
-  public Location getLocation() {
-    return location;
+  public Location getLocationID() {
+    return locationID;
   }
-
-  public void setLocation(Location location) {
-    this.location = location;
+  //MirrorID
+  public void setLocationID(Location locationID) {
+    this.locationID = locationID;
   }
 
 }

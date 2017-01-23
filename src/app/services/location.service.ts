@@ -44,13 +44,20 @@ export class LocationService {
 
   }
 
+  private fillCompaniesArray():void{
+    this.companyService.findAll();
+    this.companiesArray = this.companyService.companies;
+  }
+
+
   public findAll():void {
     let url = this.baseUrl;
     //let urlCompanies = this.baseUrlCompanies
     let headers = new Headers();
     headers.set('Accept', 'application/json');
     console.log("GETTING STUFF");
-
+    //fill companies array
+    this.fillCompaniesArray();
 
     this
       .http

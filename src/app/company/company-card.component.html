@@ -2,9 +2,9 @@
      [ngStyle]="{'background-color': (selectedItem == item) ?  'orange' : 'lightsteelblue' }">
 
     <h2>{{item.name}} {{item.branch}}</h2>
-    <p>Location: {{item.location}}</p>
+    <p>Location: {{item.locationID}}</p>
     <p>Employees: {{item.employeeNumber}}</p>
-    <p>Datum: {{item.date | date:'dd.MM.yyyy HH:mm'}}</p>
+    <p>Datum: {{item.foundationDate | date:'dd.MM.yyyy HH:mm'}}</p>
 
     <p>
         <input type="button"

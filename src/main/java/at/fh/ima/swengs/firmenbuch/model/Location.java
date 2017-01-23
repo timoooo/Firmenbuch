@@ -18,7 +18,7 @@ public class Location {
   private String land = "Austria";
 
 
-  @OneToMany(mappedBy = "location")
+  @OneToMany(mappedBy = "locationID")
   private List<Company> companies;
 
 

@@ -4,8 +4,8 @@
 export interface Company {
   id: number
   name: string
-  branch: number
+  branch: string
   employeeNumber:number
-  location_id: number
-  date: string
+  foundationDate: string
+  locationID: number
 }
