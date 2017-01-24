@@ -27,6 +27,10 @@ export class CompanyEditComponent{
             )
         }
 
+
+
+
+
         company: Company;
         message: string;
 

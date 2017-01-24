@@ -5,7 +5,7 @@
     <p>Location: {{item.locationID}}</p>
     <p>Employees: {{item.employeeNumber}}</p>
     <p>Datum: {{item.foundationDate | date:'dd.MM.yyyy HH:mm'}}</p>
-
+  <a class="btn btn-danger" (click)="delete(item)" [routerLink]="['/company']" > Delete this company </a>
     <p>
         <input type="button"
                value="Auswählen"
@@ -13,9 +13,5 @@
                (click)="select()" />
 
         <a class="btn btn-default" [routerLink]="['/company-edit', item.id, { showDetails: true, expertMode: false}]">Editieren</a>
-
-
-
-       <!--<a class="btn btn-default" [routerLink]="['/flight-edit', item.id, { showDetails: true, expertMode: false}]">Editieren</a>-->
     </p>
 </div>

@@ -63,6 +63,28 @@ export class CompanyService {
 
   console.log(this.companies);
   }
+/*
+  delete(company: Company): void  {
+    let url = this.baseUrl+"/"+company.id;
+
+    let headers = new Headers();
+    headers.set('Accept', 'application/json');
+
+    this
+      .http
+      .delete(url,{headers})
+      .map((resp => resp.json()["_embedded"]["companies"]))
+      .subscribe((companies) => {
+          this.companies = companies;
+        },
+        (err) => {
+          console.error('Fehler beim Löschen', err);
+        });
+
+    //setzen des companies arrays auf den aktuellen db stand
+    this.findAll();
+
+  }*/
 
   public find(searchCompany: string): void {
 
