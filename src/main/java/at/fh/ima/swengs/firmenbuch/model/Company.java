@@ -24,7 +24,8 @@ public class Company {
   //Headquater Location
 
 
-
+  @Column
+  int shadowedLocID;
 
 
   @ManyToOne(targetEntity = Location.class)
@@ -69,6 +70,14 @@ public class Company {
   //MirrorID
   public void setLocationID(Location locationID) {
     this.locationID = locationID;
+    this.shadowedLocID= (int) locationID.getId();
   }
 
+  public int getShadowedLocID() {
+    return shadowedLocID;
+  }
+
+  public void setShadowedLocID(int shadowedLocID) {
+    this.shadowedLocID = shadowedLocID;
+  }
 }

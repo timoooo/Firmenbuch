@@ -1,5 +1,6 @@
 package at.fh.ima.swengs.firmenbuch.model;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -13,5 +14,7 @@ import java.util.ArrayList;
 public interface LocationRepository  extends PagingAndSortingRepository<Location, Long> {
 
   ArrayList<Location> findAll();
+
+
 
 }

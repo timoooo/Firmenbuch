@@ -1,13 +1,20 @@
-<div class="alert alert-dismissible alert-warning">
+<div class="alert alert-dismissible alert-success">
   <h3>{{itemLocation.name}}</h3>
   <p>in <strong>{{itemLocation.land}}</strong></p>
-  <div *ngFor="let c of locationID">
-    <p>Company locationID{{c.locationID}}  Location ID:{{itemLocation.id}}</p>
-    <ng-container *ngIf="getStatus(c.locationID,itemLocation.id)">
 
-      <p>{{c.name}}   since: {{c.foundationDate}}  Number of Employees: {{c.employeeNumber}}</p>
-    </ng-container>
-  </div>
+
+
+
+
+
+      <div *ngFor="let c of locationID">
+      <ng-container *ngIf="getStatus(c.shadowedLocID,itemLocation.id)">
+        <p>{{c.name}}               since:   {{c.foundationDate}}                 Number of Employees{{c.employeeNumber}}   </p>
+      </ng-container>
+      </div>
+
+
+
   <!--
   <table class="table table-striped table-hover">
     <thead>
