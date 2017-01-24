@@ -11,7 +11,6 @@ public class Location {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-
   @Column
   private String name;
   @Column

@@ -90,4 +90,19 @@ export class CompanyService {
   }
 
 
+    save (company :Company): Observable<Company> {
+        let url = this.baseUrl+"/"+company.id;
+
+
+        let headers = new Headers();
+        headers.set('Accept', 'application/json');
+
+
+        return this
+            .http
+            .put(url, company, {headers})
+            .map(resp => resp.json());
+    }
+
+
 }

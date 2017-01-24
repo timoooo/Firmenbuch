@@ -6,6 +6,7 @@ import {NgModule} from "@angular/core";
 import {CompanyRouterModule} from "./company.routes";
 import {CompanyService} from "../services/company.service";
 import {CompanyCardComponent} from "./company-card.component";
+import {CompanyEditComponent} from "./company-edit/company-edit.component";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CompanyCardComponent} from "./company-card.component";
     ],
     declarations: [
         CompanyComponent,
-        CompanyCardComponent
+        CompanyCardComponent,
+        CompanyEditComponent
     ],
     providers: [
         CompanyService

@@ -3,7 +3,10 @@ import {Company} from "../entities/company";
 
 @Component({
     templateUrl: './company-card.component.html',
-    selector: 'company-card'
+    selector: 'company-card',
+    styleUrls: [
+        './company.component.css'
+    ],
 })
 export class CompanyCardComponent {
 
