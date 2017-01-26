@@ -1,0 +1,23 @@
+<h1>Create a new Location</h1>
+<div>
+  {{ message }}
+</div>
+  <div class="form-group">
+    <label>Name of your Location</label>
+    <input [(ngModel)]="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Land of the Location</label>
+    <input [(ngModel)]="land" class="form-control">
+  </div>
+  <div class="form-group">
+    <button (click)="add()" class="btn btn-default">Save</button>
+  </div>
+
+<!---
+<input class="newLocation"
+       placeholder="What needs to be done?"
+       [(ngModel)]="saveNew()"
+       (keyup.enter)="addTodo()"
+       autofocus>
+-->

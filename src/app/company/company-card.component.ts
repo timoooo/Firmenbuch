@@ -31,10 +31,7 @@ export class CompanyCardComponent {
     }
 
   delete(company: Company): void  {
-
-
     let url = this.baseUrl+"/"+company.id;
-
     let headers = new Headers();
     headers.set('Accept', 'application/json');
 
@@ -50,7 +47,7 @@ export class CompanyCardComponent {
         });
 
     //setzen des companies arrays auf den aktuellen db stand
-    this.companyService.findAll();
+    //this.companyService.findAll();
 
   }
 }

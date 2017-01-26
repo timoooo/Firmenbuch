@@ -5,6 +5,7 @@ import {LocationComponent} from "./location.component";
 import {LocationRouterModule} from "./location.routes";
 import {LocationService} from "../services/location.service";
 import {LocationCardComponent} from "./location-card.componment";
+import {LocationCreateComponent} from "./location-create/location-create.component";
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import {LocationCardComponent} from "./location-card.componment";
     ],
     declarations: [
         LocationComponent,
-        LocationCardComponent
+        LocationCardComponent,
+      LocationCreateComponent
     ],
     providers: [
       LocationService
