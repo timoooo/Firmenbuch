@@ -94,7 +94,7 @@ export class LocationService {
   }
 
 
-  add(name: string, land: string): void {
+  add(name: string, land: string) {
 
     let url = this.baseUrl;
 
@@ -102,10 +102,17 @@ export class LocationService {
     let headers = new Headers();
     headers.set('Accept', 'application/json');
 
-    this
-      .http
-      .post(url, {name:name,land:land}, {headers:headers})
-      .map(resp => resp.json());
+    this.http
+      .post(url, {land, name}, {headers})
+      .map(resp => resp.json())
+      .subscribe(
+        (location) => {
+          console.debug("Data has been saved")
+        },
+        (err) => {
+          console.error("Error. Something went wrong.")
+        }
+      );
   }
 
 

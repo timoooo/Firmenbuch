@@ -5,6 +5,7 @@ import {Component, Input} from "@angular/core";
 import {LocationService} from "../../services/location.service";
 import {ActivatedRoute} from "@angular/router";
 import "rxjs/Rx";
+import {Router} from "@angular/router";
 import {Location} from "../../entities/location";
 
 
@@ -27,7 +28,8 @@ export class LocationCreateComponent {
 
 
   constructor(private locationService: LocationService,
-              route: ActivatedRoute,) {
+              route: ActivatedRoute,
+              private router: Router) {
 
     route.params.subscribe(
       p => {
@@ -55,6 +57,7 @@ export class LocationCreateComponent {
 
   add(): void {
     this.locationService.add(this.name, this.land);
+    this.router.navigate(["home"]);
 
   }
 }
