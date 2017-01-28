@@ -2,26 +2,26 @@
 <div>
     {{ message }}
 </div>
-<div *ngIf="company">
+    <div *ngIf="company">
     <div class="form-group">
         <label>Id</label>
-        <input [(ngModel)]="company.id" class="form-control">
+        <input [(ngModel)]="company.id" value="company.id" readonly class="form-control">
     </div>
     <div class="form-group">
         <label>Name</label>
-        <input [(ngModel)]="company.name" class="form-control">
+        <input [(ngModel)]="company.name" value="company.name" class="form-control">
     </div>
     <div class="form-group">
         <label>Branch</label>
-        <input [(ngModel)]="company.branch" class="form-control">
+        <input [(ngModel)]="company.branch" value="company.branch" class="form-control">
     </div>
     <div class="form-group">
         <label>Numer of Employees</label>
-        <input [(ngModel)]="company.employeeNumber" class="form-control">
+        <input [(ngModel)]="company.employeeNumber" value="company.employeeNumber" class="form-control">
     </div>
     <div class="form-group">
         <label>Foundation Date</label>
-        <input [(ngModel)]="company.foundationDate" class="form-control">
+        <input [(ngModel)]="company.foundationDate" value="company.foundationDate" class="form-control">
     </div>
     <div class="form-group">
         <button (click)="save()" class="btn btn-default">Save</button>

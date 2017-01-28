@@ -126,5 +126,9 @@ export class CompanyService {
             .map(resp => resp.json());
     }
 
+    add(name: string, branch: string, employeeNumber: number, foundationDate: string, shadowedLocID: number){
+
+    }
+
 
 }

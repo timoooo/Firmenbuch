@@ -7,6 +7,7 @@ import {CompanyRouterModule} from "./company.routes";
 import {CompanyService} from "../services/company.service";
 import {CompanyCardComponent} from "./company-card.component";
 import {CompanyEditComponent} from "./company-edit/company-edit.component";
+import {CompanyCreateComponent} from "./company-create/company-create.component";
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {CompanyEditComponent} from "./company-edit/company-edit.component";
     declarations: [
         CompanyComponent,
         CompanyCardComponent,
-        CompanyEditComponent
+        CompanyEditComponent,
+        CompanyCreateComponent
     ],
     providers: [
         CompanyService
