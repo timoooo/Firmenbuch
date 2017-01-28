@@ -20,6 +20,12 @@
     <input [(ngModel)]="foundationDate" class="form-control">
 </div>
 
+    <select>
+        <div *ngFor="let l of getLocationsArray" >
+            <option value="{{l.name}}">{{l.name}}</option>
+        </div>
+</select>
+
 <div class="form-group">
     <button (click)="add()" class="btn btn-default">Save</button>
 </div>

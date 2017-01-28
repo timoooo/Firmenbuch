@@ -128,6 +128,22 @@ export class CompanyService {
 
     add(name: string, branch: string, employeeNumber: number, foundationDate: string, shadowedLocID: number){
 
+        let url = this.baseUrl;
+
+        let headers = new Headers();
+        headers.set('Accept', 'application/json');
+
+        this.http
+            .post(url, {name, branch, employeeNumber, foundationDate}, {headers})
+            .map(resp => resp.json())
+            .subscribe(
+                (company)=>{
+                    console.debug("Data has been saved")
+                },
+                (err)=>{
+                    console.error("Error. Something went wrong")
+                }
+            );
     }
 
 
