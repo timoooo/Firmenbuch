@@ -21,17 +21,14 @@ export class CompanyService {
 
   public findById(id: string): Observable<Company> {
 
-    let url = this.baseUrl;
-
-    let search = new URLSearchParams();
-    search.set('id', id);
+    let url = this.baseUrl+'/'+id;
 
     let headers = new Headers();
     headers.set('Accept', 'application/json');
 
     return this
         .http
-        .get(url, { headers, search })
+        .get(url, { headers})
         .map(resp => resp.json());
 
   }
@@ -114,7 +111,13 @@ export class CompanyService {
 
     save (company :Company): Observable<Company> {
         let url = this.baseUrl+"/"+company.id;
-
+        let locationUrl: string = 'http://localhost:8080/locations';
+        let name = company.name;
+        let branch = company.branch;
+        let employeeNumber = company.employeeNumber;
+        let foundationDate = company.foundationDate;
+        let shadowedLocID = company.locationID;
+        let locationID: string = locationUrl+'/'+company.locationID;
 
         let headers = new Headers();
         headers.set('Accept', 'application/json');
@@ -122,7 +125,7 @@ export class CompanyService {
 
         return this
             .http
-            .put(url, company, {headers})
+            .put(url, {name, branch, employeeNumber, foundationDate, shadowedLocID, locationID}, {headers})
             .map(resp => resp.json());
     }
 
