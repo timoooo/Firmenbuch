@@ -1,36 +1,36 @@
 <h1>CompanyEdit!</h1>
 <div>
-    {{ message }}
+  {{ message }}
 </div>
-    <div *ngIf="company">
-    <div class="form-group">
-        <label>Id</label>
-        <input [(ngModel)]="company.id" value="company.id"  readonly class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Name</label>
-        <input [(ngModel)]="company.name" value="company.name" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Branch</label>
-        <input [(ngModel)]="company.branch" value="company.branch" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Numer of Employees</label>
-        <input [(ngModel)]="company.employeeNumber" value="company.employeeNumber" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Foundation Date</label>
-        <input [(ngModel)]="company.foundationDate" value="company.foundationDate" class="form-control">
-    </div>
-    <div class="form-group">
-        <label> Location</label>
-        <select [(ngModel)]="company.locationID" class="form-control" name="location" required>
-            <option *ngFor="let l of getLocationsArray" value="{{l.id}}">{{l.name}}</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button (click)="save()" class="btn btn-default">Save</button>
-    </div>
+<div *ngIf="company">
+  <div class="form-group">
+    <label>Id</label>
+    <input [(ngModel)]="company.id" value="company.id" readonly class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Name</label>
+    <input [(ngModel)]="company.name" value="company.name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Branch</label>
+    <input [(ngModel)]="company.branch" value="company.branch" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Numer of Employees</label>
+    <input [(ngModel)]="company.employeeNumber" value="company.employeeNumber" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Foundation Date</label>
+    <input [(ngModel)]="company.foundationDate" value="company.foundationDate" class="form-control">
+  </div>
+  <div class="form-group">
+    <label> Location</label>
+    <select [(ngModel)]="company.locationID" class="form-control" name="location" required>
+      <option *ngFor="let l of getLocationsArray" value="{{l.id}}">{{l.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button (click)="save()" class="btn btn-default">Save</button>
+  </div>
 </div>
 `
