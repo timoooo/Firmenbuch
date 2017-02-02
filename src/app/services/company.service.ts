@@ -109,7 +109,7 @@ export class CompanyService {
     let locationID = locationUrl + '/' + locationId;
     let headers = new Headers();
     headers.set('Accept', 'application/json');
-
+    //checks the variable is a number
 
     this.http
       .post(url, {name, branch, employeeNumber, foundationDate, shadowedLocID, locationID}, {headers})

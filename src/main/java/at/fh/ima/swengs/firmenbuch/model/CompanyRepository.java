@@ -2,6 +2,7 @@ package at.fh.ima.swengs.firmenbuch.model;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public interface CompanyRepository  extends PagingAndSortingRepository<Company, 
 
   ArrayList<Company> findAll();
 
-  @Query(value = "SELECT c.name,c.foundation_date,l.name,l.land FROM company c INNER JOIN location l ON c.location_id=l.id",nativeQuery = true)
-  ArrayList<Company> findAllCmp();
+
+
 
 
 }
