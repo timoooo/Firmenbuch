@@ -7,5 +7,6 @@ export interface Company {
   branch: string
   employeeNumber:number
   foundationDate: string
+  shadowedLocID: number
   locationID: number
 }

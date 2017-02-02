@@ -17,7 +17,7 @@ export class CompanyCreateComponent{
     branch: string;
     employeeNumber: number;
     foundationDate: string;
-    shadowedLocID: number;
+    locationID: number;
 
     constructor(private companyService: CompanyService, private locationService: LocationService, private router: Router){
         this.searchLocations();
@@ -35,8 +35,7 @@ export class CompanyCreateComponent{
     }
 
     add(): void{
-        console.log(this.getLocationsArray)
-        this.companyService.add(this.name, this.branch, this.employeeNumber, this.foundationDate, this.shadowedLocID);
+        this.companyService.add(this.name, this.branch, this.employeeNumber, this.foundationDate, this.locationID, this.locationID);
         this.router.navigate(["home"]);
     }
 }

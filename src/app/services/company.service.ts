@@ -126,15 +126,18 @@ export class CompanyService {
             .map(resp => resp.json());
     }
 
-    add(name: string, branch: string, employeeNumber: number, foundationDate: string, shadowedLocID: number){
+    add(name: string, branch: string, employeeNumber: number, foundationDate: string, shadowedLocID: number, locationId: number){
 
         let url = this.baseUrl;
-
+        let locationUrl: string = 'http://localhost:8080/locations';
+        let locationID = locationUrl+'/'+ locationId;
         let headers = new Headers();
         headers.set('Accept', 'application/json');
 
+
+
         this.http
-            .post(url, {name, branch, employeeNumber, foundationDate}, {headers})
+            .post(url, {name, branch, employeeNumber, foundationDate, shadowedLocID, locationID}, {headers})
             .map(resp => resp.json())
             .subscribe(
                 (company)=>{
