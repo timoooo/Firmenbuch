@@ -1,53 +1,41 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {Company} from "../entities/company";
 
 import {Injectable, Inject} from "@angular/core";
 import {Http, URLSearchParams, Headers} from "@angular/http";
 import {BASE_URL_COMPANIES} from "../app.tokens";
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import 'rxjs/Rx';
 import {CompanyService} from "../services/company.service";
+import {Router} from "@angular/router";
 
 @Component({
-    templateUrl: './company-card.component.html',
-    selector: 'company-card',
-    styleUrls: [
-        './company.component.css'
-    ],
+  templateUrl: './company-card.component.html',
+  selector: 'company-card',
+  styleUrls: [
+    './company.component.css'
+  ],
 })
 export class CompanyCardComponent {
 
-    @Input() item: Company;
-    @Input() selectedItem: Company;
-    @Output() selectedItemChange = new EventEmitter();
-    companies: Array<Company> = [];
-    constructor( @Inject(BASE_URL_COMPANIES) private baseUrl: string,
-                 private http: Http,
-    private companyService: CompanyService){
+  @Input() item: Company;
+  @Input() selectedItem: Company;
+  @Output() selectedItemChange = new EventEmitter();
 
-    }
-    select() {
-        this.selectedItemChange.next(this.item);
-    }
 
-  delete(company: Company): void  {
-    let url = this.baseUrl+"/"+company.id;
-    let headers = new Headers();
-    headers.set('Accept', 'application/json');
+  constructor(private companyService: CompanyService,
+              private router: Router) {
+  }
 
-    this
-      .http
-      .delete(url,{headers})
-      .map((resp => resp.json()["_embedded"]["companies"]))
-      .subscribe((companies) => {
-          this.companies = companies;
-        },
-        (err) => {
-          console.error('Fehler beim Löschen', err);
-        });
 
-    //setzen des companies arrays auf den aktuellen db stand
-    //this.companyService.findAll();
+  select() {
+    this.selectedItemChange.next(this.item);
+  }
+
+
+  delete(company: Company): void {
+    this.companyService.delete(company);
+    this.router.navigate(["home"]);
 
   }
 }

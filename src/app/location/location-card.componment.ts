@@ -17,12 +17,8 @@ export class LocationCardComponent {
   @Input() locationID: number;
 
   public  getStatus (locationID: number, companyID: number){
-    console.log(locationID +"   "+companyID);
-    if(locationID === companyID){
-      return true;
-    } else {
-      return false;
-    }
+    if(locationID === companyID) return true;
+    else return false;
 }
 
 }
